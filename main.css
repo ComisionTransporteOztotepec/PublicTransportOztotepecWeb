@@ -1,0 +1,271 @@
+/* --- CONFIGURACIÓN GLOBAL --- */
+/* Aplicamos la tipografía Inter que agregaste en el HTML */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Un gris muy claro, menos agresivo que el blanco puro */
+    color: #000000;
+}
+
+/* --- ESTILOS DEL ENCABEZADO Y AVISO --- */
+.cabecera-principal {
+    background-color: #ffffff;
+    padding: 16px;
+    display: flex;
+    text-align: center;
+    gap: 10px; /* Espacio entre el logo y el texto */
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.identidad-visual {
+    align-items: center;
+}
+
+.logo {
+    width: 60px; /* Tamaño optimizado para móvil */
+    height: auto;
+    border-radius: 8px; /* Un toque moderno al logo */
+}
+
+.titulo-comision {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.aviso-honorario {
+    background-color: #e3f2fd; /* Un azul pastel que transmite institucionalidad/confianza */
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.aviso-honorario h3 {
+    margin: 0;
+    text-align: justify;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+/* --- LA MAGIA DEL CARRUSEL --- */
+.seccion-avisos {
+    padding: 24px 0; /* Espacio arriba y abajo, sin espacio a los lados para que el scroll llegue al borde de la pantalla */
+}
+
+/* Solo para lectores de pantalla, ocultamos visualmente el H2 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* EL CONTENEDOR FLEXIBLE */
+.carrusel-texto-deslizable {
+    display: flex; /* Coloca las tarjetas lado a lado */
+    overflow-x: auto; /* Permite deslizar horizontalmente */
+    gap: 16px; /* Espacio entre tarjetas */
+    padding: 0 16px 16px 16px; /* Espaciado interno, agregamos padding abajo para la sombra */
+    
+    /* El toque Senior: CSS Scroll Snap */
+    scroll-snap-type: x mandatory; /* Obliga a encajar en el eje X */
+    scroll-behavior: smooth; /* Deslizamiento suave */
+    
+    /* Ocultar la barra de scroll fea en móviles para un diseño más limpio */
+    scrollbar-width: none; /* Firefox */
+}
+.carrusel-texto-deslizable::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+/* LAS TARJETAS */
+.tarjeta-aviso {
+    flex: 0 0 85%; /* Evita que la tarjeta se encoja y hace que ocupe el 85% de la pantalla (así el usuario ve que hay otra tarjeta asomándose) */
+    scroll-snap-align: center; /* Cuando el usuario suelta el dedo, la tarjeta se centra */
+    
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave para dar profundidad */
+    border-left: 5px solid #ccc; /* Un borde izquierdo para indicar el tipo de aviso */
+}
+
+/* Variaciones de color para las tarjetas (puedes ajustar los colores) */
+.tarjeta-aviso.urgente {
+    border-left-color: #d32f2f; /* Rojo para cierres o retrasos */
+}
+.tarjeta-aviso.info {
+    border-left-color: #1976d2; /* Azul para información general */
+}
+.tarjeta-aviso.normal {
+    border-left-color: #388e3c; /* Verde para rutas normales */
+}
+
+.etiqueta-tiempo {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.tarjeta-aviso h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #111;
+}
+
+.tarjeta-aviso p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* --- SECCIÓN DE LABORES --- */
+.seccion-labores {
+    padding: 2px 16px;
+    background-color: #ffffff; /* Fondo blanco para contrastar con el gris del carrusel */
+}
+
+.contenedor-centrado {
+    max-width: 800px; /* Evita que en computadoras se estire de lado a lado */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.titulo-seccion {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.subtitulo-seccion {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* --- LA PILA Y LAS TARJETAS --- */
+.pila-labores {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    gap: 12px; /* Espacio de separación entre cada tarjeta */
+}
+
+.tarjeta-labor {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* Evita que el contenido se desborde visualmente */
+}
+
+/* El estilo del título (donde el usuario da clic) */
+.tarjeta-labor summary {
+    padding: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #483737;
+    cursor: pointer; /* Cambia el cursor a una manita */
+    background-color: #f1f3f5;
+    transition: background-color 0.2s ease;
+    /* La flechita viene por defecto en el navegador, pero con un buen padding se ve elegante */
+}
+
+/* Efecto al pasar el ratón por encima (Hover) */
+/* .tarjeta-labor summary:hover {
+    background-color: #e9ecef;
+} */
+
+/* El estilo de lo que se despliega */
+.contenido-labor {
+    padding: 16px;
+    border-top: 1px solid #e0e0e0; /* Línea divisoria entre el título y el texto */
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+.pie-pagina {
+    background-color: #1e293b; /* Azul muy oscuro/pizarra, da mucha seriedad */
+    color: #f8fafc; /* Texto casi blanco para alto contraste */
+    padding: 40px 16px 24px 16px;
+    margin-top: 40px; /* Separa el footer del contenido de arriba */
+}
+
+.contenedor-centrado-footer {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Espacio grande entre las secciones del footer */
+}
+
+.fundamentos-comision h3,
+.redes-comision h3 {
+    color: #94a3b8; /* Un gris azulado claro para los títulos */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Separar las letras da un toque formal */
+    margin: 0 0 12px 0;
+}
+
+.fundamentos-comision p {
+    margin: 0;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+/* Redes Sociales */
+.enlaces-redes {
+    display: flex;
+    flex-direction: column; /* Botones uno debajo del otro en móvil */
+    gap: 12px;
+}
+
+.boton-red {
+    display: block;
+    background-color: #334155; /* Fondo del botón */
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px; /* Área táctil grande */
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.boton-red:hover {
+    background-color: #475569;
+}
+
+/* Un toque de color para destacar el WhatsApp si lo usan para reportes */
+.boton-red.whatsapp {
+    background-color: #166534; /* Verde oscuro */
+}
+.boton-red.whatsapp:hover {
+    background-color: #15803d; /* Verde más brillante al pasar el ratón */
+}
+
+/* Cierre */
+.cierre-legal {
+    border-top: 1px solid #334155; /* Línea separadora sutil */
+    padding-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.cierre-legal p {
+    margin: 4px 0;
+}

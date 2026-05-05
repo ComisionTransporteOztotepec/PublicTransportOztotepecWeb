@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Buena práctica: Cambiar a 'es' para español -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. SOLUCIÓN DE TIPOGRAFÍA: Importamos la fuente 'Inter' de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/main.css">
+    <title>Comisión de Transporte Público San Pablo Oztotepec</title>
+</head>
+<body>
+    
+    <!-- ENCABEZADO -->
+    <header class="cabecera-principal">
+        <div class="identidad-visual">
+            <!-- Quitamos width/height de aquí, eso se controla en main.css -->
+            <img src="/assets/logoComision.jpg" alt="Logo de la Comisión de Transporte Público" class="logo">
+        </div>
+        <div>
+            <h1 class="titulo-comision">COMISIÓN DE TRANSPORTE PÚBLICO<br> SAN PABLO OZTOTEPEC</h1>
+        </div>
+    </header>
+
+    <aside class="aviso-honorario">
+            <h3>Somos vecinos como tú. Asumimos esta responsabilidad en Asamblea no para cobrar un sueldo, sino por el profundo compromiso con San Pablo Oztotepec.</h3>
+    </aside>
+
+    <!-- CARRUSEL DE AVISOS URGENTES (TEXTO) -->
+    <section class="seccion-avisos">
+        <h2 class="sr-only">Avisos</h2> <!-- Título para accesibilidad -->
+        
+        <div class="carrusel-texto-deslizable">
+            
+            <!-- TARJETA DE AVISO 1 -->
+            <!-- <article class="tarjeta-aviso urgente">
+                <span class="etiqueta-tiempo">Hoy, 06:30 AM</span>
+                <h3>Cierre de Avenida</h3>
+                <p>Cierre de la avenida en San Salvador Cuauhtenco. Ruta 100 y 93 dirección Xochimilco saliendo desde Miguel Alemán presentan retrasos.</p>
+            </article> -->
+
+            <!-- TARJETA DE AVISO 2 -->
+            <!-- TARJETA DE AVISO: VIALIDAD -->
+            <article class="tarjeta-aviso urgente">
+                <span class="etiqueta-tiempo">Aviso Permanente</span>
+                <h3>Libera la Vialidad</h3>
+                <p>¡Apoya tu transporte! No te estaciones sobre la línea roja en la avenida. Una vialidad libre nos ayuda a todos.</p>
+            </article>
+
+            <!-- TARJETA DE AVISO 3 -->
+            <article class="tarjeta-aviso normal">
+                <span class="etiqueta-tiempo">Aviso Permanente</span>
+                <h3>Horarios de Base RTP</h3>
+                <p>El servicio de RTP mantiene salidas aproximadas cada 50 minutos</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE LABORES Y TRANSPARENCIA -->
+    <section class="seccion-labores">
+        <div class="contenedor-centrado">
+            <h2 class="titulo-seccion">Transparencia y Gestión</h2>
+            <p class="subtitulo-seccion">Queremos que sepas que cada volante que recibes, cada lona que ves colgada y cada evento que organizamos, es posible gracias a la cooperación económica y el esfuerzo de los propios vecinos.
+                 Ponemos nuestro tiempo y de nuestro bolsillo porque creemos que un mejor transporte dignifica nuestra vida diaria. Cuidar nuestras calles y respetar las reglas es la mejor forma en la que
+                 tú también puedes sumarte a este esfuerzo.</p>
+            
+            <!-- CONTENEDOR EN PILA (Stack) -->
+            <div class="pila-labores">
+                
+                <!-- LABOR 1 (LA MÁS NUEVA HASTA ARRIBA) -->
+                <details class="tarjeta-labor">
+                    <summary>Evento "RTP Cultural" en el Cuartel Zapatista</summary> 
+                    <div class="contenido-labor">
+                        <p>Nos juntamos en el Cuartel Zapatista junto con la gente de RTP para platicar de frente con los vecinos. Fue un evento para convivir,
+                             escuchar sus dudas y recordar que si cuidamos los camiones y nos apoyamos entre todos, el transporte de nuestro pueblo funciona mucho mejor.</p>
+                        <!-- Aquí después puedes agregar una <img> del documento o asamblea -->
+                    </div>
+                </details>
+
+                <details class="tarjeta-labor">
+                    <summary>Campaña vecinal para liberar nuestra avenida</summary> 
+                    <div class="contenido-labor">
+                        <p>Salimos a repartir volantes y colgamos lonas en la avenida principal para pedirle a la comunidad que nos apoye. El mensaje es sencillo: 
+                            si evitamos estacionarnos donde está pintado de rojo, los camiones pasan más rápido y todos llegamos más temprano a casa.</p>
+                        <!-- Aquí después puedes agregar una <img> del documento o asamblea -->
+                    </div>
+                </details>
+
+                <details class="tarjeta-labor">
+                    <summary>Caseta y baño para los operadores de RTP</summary> 
+                    <div class="contenido-labor">
+                        <p>Haciendo equipo y organizándonos con los vecinos, logramos poner una caseta y un baño para los operadores de las unidades.
+                             Darles un espacio digno a los choferes mejora sus condiciones de trabajo, lo que al final se traduce en un mejor servicio para todos los que usamos la ruta.</p>
+                        <!-- Aquí después puedes agregar una <img> del documento o asamblea -->
+                    </div>
+                </details>
+
+                <!-- LABOR 2 (MÁS ANTIGUA ABAJO) -->
+                <details class="tarjeta-labor">
+                    <summary>Recorrido para revisar la ruta de Pozos</summary> 
+                    <div class="contenido-labor">
+                        <p>Caminamos la ruta de Pozos junto con los directivos de RTP para ver con nuestros propios ojos cómo están las calles. 
+                            Ubicamos los cuellos de botella en el tráfico y vimos dónde hacen falta señalamientos para que los camiones puedan pasar seguros y 
+                            sin contratiempos.</p>
+                    </div>
+                </details>
+
+                <!-- LABOR 3 -->
+                <details class="tarjeta-labor">
+                    <summary>Acuerdos para mejorar el servicio con SEMOVI, RTP y RUTAS</summary> 
+                    <div class="contenido-labor">
+                        <p>Nos sentamos a platicar con los directivos de la Secretaría de 
+                            Movilidad, el Módulo 3 de RTP y los representantes de las 
+                            Rutas 100 y 81. El objetivo fue muy claro: ponernos de acuerdo,
+                            resolver los problemas de las rutas y asegurar un mejor transporte para 
+                            todos los vecinos.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA INSTITUCIONAL -->
+    <footer class="pie-pagina">
+        <div class="contenedor-centrado-footer">
+            
+            <!-- SECCIÓN 1: FUNDAMENTOS -->
+            <div class="fundamentos-comision">
+                <h3>Fundamento Ciudadano</h3>
+                <p>La Comisión de Transporte Público de San Pablo Oztotepec es un órgano autónomo y voluntario. Sus integrantes fueron elegidos democráticamente mediante Asamblea General por la comunidad, con el mandato de vigilar, gestionar y mejorar la movilidad de nuestro pueblo.</p>
+            </div>
+
+            <!-- SECCIÓN 2: REDES SOCIALES -->
+            <div class="redes-comision">
+                <h3>Canales Oficiales</h3>
+                <div class="enlaces-redes">
+                    <!-- Cambia los href por los links reales de la comisión -->
+                    <a href="https://www.facebook.com/profile.php?id=61581237241748" target="_blank" rel="noopener noreferrer" class="boton-red">Facebook</a>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: COPYRIGHT / CIERRE -->
+            <div class="cierre-legal">
+                <p>&copy; 2026 Comisión de Transporte Público San Pablo Oztotepec.</p>
+                <p>Hecho por y para la comunidad.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/main.js"></script>
+</body>
+</html>
