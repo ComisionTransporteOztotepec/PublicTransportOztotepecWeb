@@ -148,6 +148,7 @@ body {
 .subtitulo-seccion {
     font-size: 15px;
     color: #555;
+    text-align: justify;
     margin-bottom: 24px;
     line-height: 1.5;
 }
@@ -157,6 +158,15 @@ body {
     display: flex;
     flex-direction: column; /* Apila los elementos verticalmente */
     gap: 12px; /* Espacio de separación entre cada tarjeta */
+}
+/* Estilos para las imágenes dentro de las tarjetas */
+.contenido-labor picture, 
+.contenido-labor img {
+    display: block; /* Elimina el pequeño espacio en blanco que los navegadores dejan debajo de las imágenes en línea */
+    max-width: 100%; /* Obliga a la imagen a no salirse de la tarjeta */
+    height: auto; /* Mantiene la proporción original para que no se vea estirada o apachurrada */
+    border-radius: 6px; /* (Opcional) Un ligero redondeo para que combine con el border-radius de tu .tarjeta-labor */
+    margin-top: 16px; /* Añade un espacio de respiración entre tu párrafo y la foto del evento */
 }
 
 .tarjeta-labor {
